@@ -1,0 +1,55 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #f07f2f;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+}
+
+header h2 {
+    font-size: 1.25rem;
+}
+
+header nav {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav li {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+main {
+
+}
+
+#home {
+
+}
+
+#about {
+
+}
+
+#projects {
+
+}
+
+footer {
+
+}
