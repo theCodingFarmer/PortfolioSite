@@ -1,19 +1,64 @@
 html {
     font-size: 16px;
+    /*font-family: 'Merienda', cursive;*/
+    font-family: 'Unbounded', cursive;
 }
 
 body {
-    background-color: #f07f2f;
+    margin: 0;
+}
+
+.icon1 {
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
+    font-size: 2rem;
+}
+
+.icon2 {
+    margin-top: 0.3125rem;
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
+    font-size: 2rem;
+    color: black;
+}
+
+a:link {
+    color: #340dbf;
+    background-color: transparent;
+    text-decoration: underline;
+}
+  
+a:visited {
+    color: #340dbf;
+    background-color: transparent;
+    text-decoration: underline;
+}
+  
+a:hover {
+    color: orange;
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+a:active {
+    color: orange;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 header {
+    text-shadow: 2px 2px black;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 3rem;
+    position: relative;
+    z-index: 2;
 }
 
 header h2 {
+    padding-left: 1rem;
     font-size: 1.25rem;
 }
 
@@ -29,27 +74,227 @@ header nav ul {
     list-style-type: none;
 }
 
+header a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+header a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #447507;
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+header a:active {
+    color: #447507;
+    background-color: transparent;
+    text-decoration: none;
+}
+
 nav li {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
 main {
-
+    position: relative;
+    top: 0rem;
 }
 
 #home {
+    font-family: 'Unbounded', cursive;
+    color: white;
+    text-shadow: 2px 2px black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./images/books_img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    top: -3rem;
+    width: 100%;
+}
+
+#homeHeader:before {
+    content: " ";
+    z-index: 1;
+    display: block;
+    position: absolute;   
+    min-height: 100vh;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#homeHeader * {
+    position: relative;
+    justify-content: space-between;
+}
+
+#home h1 {
+    font-size: 4rem;
+    margin-top: 1.875rem;
+    margin-bottom: 0.3125rem;
+    z-index: 2;
+}
+
+#home h2 {
+    font-size: 1.5rem;
+    margin-top: 0.3125rem;
+    margin-bottom: 0.3125rem;
+    z-index: 2;
+}
+
+#home #contact {
+    margin-top: 0.3125rem;
+    z-index: 2;
 
 }
 
+#home a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+#home a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#home a:hover {
+    color: #447507;
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+#home a:active {
+    color: #447507;
+    background-color: transparent;
+    text-decoration: none;
+}
+
 #about {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_container {
+    width: 60%;
+    padding: 0.5rem;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
+}
+
+#about h2 {
+    text-align: center;
+}
+
+.profile_pic {
+    display: block;
+    margin: auto;
+    width: auto;
+    max-height: 15rem;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+}
+
+.about_subcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.info_container {
+    max-width: 50%;
+}
+
+.profile_container {
+    max-width: 20%;
+}
+
+#about p {
+    margin: 0rem;
+}
+
+#about .p_familar {
+    margin-top: 0.625rem;
 
 }
 
 #projects {
+    display: flex;
+    flex-direction: column;
+    height: 31.25rem;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}
 
+#projects ul {
+    width: 75%;
+    display: inline-flex;
+    justify-content: center;
+    padding-left: 0rem;
+    list-style-type: none;
+    text-align: center;
+}
+
+#projects li {
+    text-align: left;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 0.5rem;
+    width: 50%;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
+}
+
+#projects .messageButton {
+    border: 0.15rem solid black;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+    max-width: 33%;
+    padding: 0.2rem;
+    text-align: center;
 }
 
 footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+}
 
+footer h3 {
+    font-size: 1.25rem;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer li {
+    padding-right: 1rem;
 }

@@ -3,6 +3,9 @@
     <head>
        <title>My Portfolio</title> 
        <link rel="stylesheet" href="./index.css" />
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -12,41 +15,102 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <section id="home">
-                <h1>Hello!</h1>
-                <h2>I am Matthew Wiese</h2>
-                <h2>Scholar, Developer, Husband and Father</h2>
+                <div id="homeHeader">
+                    <h1>Matthew Wiese</h1>
+                    <h2>Scholar, Developer, Husband and Father</h2>
+                </div>
+                <div id="contact">
+                    <a class="fa-brands fa-github icon1" style="--fa-pull-margin: 0.3125rem;" target="_blank" href="https://github.com/theCodingFarmer"></a>
+                    <a class="fa-solid fa-envelope icon1" style="--fa-pull-margin: 0.3125rem;" target="_blank" href="mailto:wiesem@gmail.com"></a>
+                    <a class="fa-brands fa-linkedin icon1" style="--fa-pull-margin: 0.3125rem;" target="_blank" href="https://www.linkedin.com/in/matthew-wiese-326522251"></a>
+                </div>
             </section>
             <section id="about">
-                <p>About</p>
+                <div class="about_container">
+                    
+                    <div class="about_subcontainer">
+                        <div class="profile_container">
+                            <img class="profile_pic" src="./images/test_pic.jpg" alt="profile picture">
+                        </div>
+                        <div class="info_container">
+                            <h2>About Me</h2>
+                            <h3>Hello!</h3>
+                            <p>I am Matthew Wiese from central Iowa.</p>
+                            <p>I enjoy coding, puzzles, and learning new skills.</p>
+                            <p>As a husband and a father, I am constantly being challenged with new “puzzles” and learning new skills.</p>
+                            <p class="p_familar">I am familar with:</p>
+                            <i class="fa-brands fa-html5 icon2"></i>
+                            <i class="fa-brands fa-css3-alt icon2"></i>
+                            <i class="fa-brands fa-square-js icon2"></i>
+                            <i class="fa-brands fa-git icon2"></i>
+                            <i class="fa-brands fa-github icon2"></i>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section id="projects">
-                <p>Projects</p>
+                <h2>Projects</h2>
+                <ul>
+                    <li>
+                        <h3>Character Generator</h3>
+                        <p>This was the first of my portfolio projects for school. We were asked to create a message generator in JavaScript that would randomly generate a message for a user, but it could be any message we wanted it to be. So my message generator creates a character with a specific skill and a catch phrase.</p>
+                        <a target="_blank" href="https://github.com/theCodingFarmer/messageGenerator.git">Link to my project.</a>
+                        <div class="generator">
+                            <p onclick="createMessage(messageArr)" class="messageButton">Try creating your own character</p>
+                            <p id="newMessage"> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Portfolio Website</h3>
+                        <p>This website was the second of my portfolio projects for school. For this project we needed to use all that we had learned to showcase our skills. We needed to talk about ourselves and projects. We also needed to have contact information.</p>
+                    </li>
+                </ul>
             </section>
         </main>
 
-        <footer>
-            <h3>Contact Me</h3>
+        <footer id="contact">
+            <h3>Contact Me:</h3>
             <ul>
-                <li>Email</li>
-                <li>LinkedIn</li>
-                <li>GitHub</li>
+                <li><a href="mailto:wiesem@gmail.com">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/matthew-wiese-326522251">LinkedIn</a></li>
+                <li><a href="https://github.com/theCodingFarmer">GitHub</a></li>
             </ul>
         </footer>
     </body>
 
-<i class="fa-brands fa-html5"></i>
-<i class="fa-brands fa-css3-alt"></i>
-<i class="fa-brands fa-square-js"></i>
-<i class="fa-brands fa-git"></i>
-<i class="fa-brands fa-github"></i>
-<i class="fa-solid fa-envelope"></i>
-<i class="fa-brands fa-linkedin"></i>
+<script>
+    const messageArr = [{
+        _character: 'Jedi Knight',
+        _ability: ['energy abosorption', 'mind control', 'moving objects with the force'],
+        _quote: ["'Try not. Do. Or do not. There is no try.'", "'It takes strength to resist the dark side. Only the weak embrace it.'", "'Confronting fear is the destiny of a Jedi.'"]
+    }, {
+        _character: 'Hobbit',
+        _ability: ['walking great distances', 'eating vast amounts of food', 'cooking fantastic meals'],
+        _quote: ["'Go back...Go sideways? Impossible! Go forward? Only thing to do! On we go!'", "'Please don't cook me, kind sirs! I am a good cook myself, and cook better than I cook, if you see what I mean.'", "'Sorry! I don't want any adventures, thank you. Not today. Good morning! But please come to tea - any time you like! Why not tomorrow? Good bye!'"]
+    }, {
+        _character: 'Sith Lord',
+        _ability: ['choking people with the force', 'throwing objects with the force', 'shooting lighting from your hands'],
+        _quote: ["'Peace is a lie. There is only passion.'", "'The galaxy writhes in chaos and disorder.'", "'Fear attracts the fearful...the strong...the weak...the innocent...the corrupt. Fear. Fear is my ally.'"]
+    }]
 
+    // Randomly generate a number
+    const randomNum = () => {
+        return Math.floor(Math.random()*3);
+    }
+
+    //Creates a random message
+    const createMessage = (arr) => {
+        const characterNum = randomNum();
+        document.getElementById('newMessage').innerHTML = (`You are a ${arr[characterNum]._character} with the ability of ${arr[characterNum]._ability[randomNum()]}, while being known for saying ${arr[characterNum]._quote[randomNum()]}`);
+    }
+
+</script>
 <script src="https://kit.fontawesome.com/4f1b0e0f2b.js" crossorigin="anonymous"></script>
 </html>
